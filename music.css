@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: backgroundAnimation 10s ease infinite; /* Adjusted speed for smoother transitions */
+}
+
+/* Keyframes for smooth background animation with vibrant colors */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #FF6F61, #FF4081);
+    }
+    20% {
+        background: linear-gradient(135deg, #FFEB3B, #FF6F61);
+    }
+    40% {
+        background: linear-gradient(135deg, #8BC34A, #FFEB3B);
+    }
+    60% {
+        background: linear-gradient(135deg, #6A5B9A, #8BC34A);
+    }
+    80% {
+        background: linear-gradient(135deg, #FF4081, #6A5B9A);
+    }
+    100% {
+        background: linear-gradient(135deg, #FF6F61, #FF4081);
+    }
+}
+
+.music-player {
+    background: rgba(235, 115, 141, 0.9); /* Slightly transparent for effect */
+    width: 400px;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 15px; /* Rounded corners for a softer look */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+nav .circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    color: crimson;
+    box-shadow: 0 5px 10px rgba(219, 10, 55, 0.308);
+}
+
+.song-img {
+    width: 220px;
+    border-radius: 50%;
+    border: 8px solid rgba(219, 10, 55, 0.308);
+    box-shadow: 0 10px 60px rgba(219, 10, 55, 0.308);
+}
+
+.music-player h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin-top: 20px;
+}
+
+.music-player p {
+    font-size: 13px;
+    color: #333;
+}
+
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: crimson;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: crimson;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px rgba(219, 10, 55, 0.308);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: crimson;
+    box-shadow: 0 10px 20px rgba(219, 10, 55, 0.308);
+    cursor: pointer;
+}
+
+.controls div:nth-child(2) {
+    transform: scale(1.5);
+    background: crimson;
+    color: white;
+}
+
+/* Add these styles to target the 'a' tag specifically */
+.circle a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Remove underline */
+    color: crimson; /* Match the color of the .circle */
+}
+
+.circle a:hover {
+    color: darkred; /* Change color on hover, optional */
+}

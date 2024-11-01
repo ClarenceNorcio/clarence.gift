@@ -1,0 +1,79 @@
+html, body {
+    height: 100%; /* Ensure both html and body take full height */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Positioning for the background */
+    background-color: black; /* Fallback color */
+}
+
+/* Button Styles */
+a {
+    text-decoration: none; /* Remove underline from link */
+}
+
+.btn {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: crimson; /* Initial button color */
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 16px; /* Font size for better readability */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 55, 0.712); /* Semi-transparent background */
+    left: 0;
+    top: 0;
+    border-radius: 12px; /* Match border radius */
+    transition: transform 0.3s ease; /* Transition for scaling effect */
+}
+
+.btn:hover {
+    background-color: crimson; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.btn:hover::after {
+    transform: scale(1.2); /* Scale background on hover */
+}
+
+.btn:active {
+    background-color: crimson; /* Darker color on click */
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Animated colorful background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #f8e71c, #1a73e8, #4caf50, #ff9800);
+    background-size: 400% 400%; /* Make the gradient larger for better animation */
+    animation: gradientAnimation 15s ease infinite; /* Animate the gradient */
+    z-index: -1; /* Keep it behind other elements */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
